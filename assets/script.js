@@ -113,10 +113,10 @@ function displayQuestions() {
 var item = document.getElementById("userInitials").value;
 function saveInitials() {
     if (item === "") {
-        alert("Please insert your initials to save your score")
-    } else {
-        localStorage.setItem(item);
         alert("Score saved")
+        localStorage.setItem(item);
+    } else {
+        alert("Please enter your initials to save your score")
 
     }
 }
