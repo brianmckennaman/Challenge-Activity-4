@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My JavaScript Quiz</title>
+    <link rel="stylesheet" href="/Challenge-Activity-4/assets/style.css"/>
+</head>
+
+<header class="highscoreLink" id="highscoreLink">
+    <a>View High Scores</a>
+</header>
+
+<p class="highScores" id="highScores">High Scores
+    <div></div>
+</p>
+
+<body>
+    <h1 class="titleText"> Welcome to my JavaScript quiz! Here, you can take a short, 5 question quiz to test your knowledge of JavaScript. You will have 60 seconds to complete the quiz, but be careful! Wrong answers will remove 10 seconds from the timer.</h1>
+
+    <h2>Press the start button below to begin!</h2>
+
+    <h2 class="countdownTimer" id="countdownTmr"></h2>
+
+
+    <div>
+        <button class="startButton" id="startBtn">START</button>
+    </div>
+
+    <h1 class="questionHeader" id="questionHeader"></h1>
+
+    <p>
+        <button class="quizQuestions" id="choiceA"></button>
+        <button class="quizQuestions" id="choiceB"></button>
+        <button class="quizQuestions" id="choiceC"></button>
+        <button class="quizQuestions" id="choiceD"></button>
+    </p>
+
+    <p class="enterhighScore" id="enterhighScore">Enter your initials to save your score  <input type="text" id="userInitials"><button id="submitscoreBtn">Submit</button></p>
+
+    <script src="/Challenge-Activity-4/assets/script.js"></script>
+</body>
+</html>
