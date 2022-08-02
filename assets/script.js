@@ -6,7 +6,8 @@ var questionChoices = document.querySelectorAll(".quizQuestions")
 var countdownTimer = document.getElementById("countdownTmr");
 var userInitials = document.getElementById("userInitials");
 var submitscoreBtn = document.getElementById("submitscoreBtn");
-var highscoreList = document.getElementById("highScores");
+var highscoreLink = document.getElementById("highscoreLink");
+var highscoreList = document.getElementById("highscoreList");
 console.log(questionChoices);
 
 //function for timer
@@ -51,36 +52,36 @@ var questions = [
     },
     {
         question: "A boolean represents what kind of value?",
-        choices: {
-            choiceA: "An integer",
-            choiceB: "A user input",
-            choiceC: "Text characters",
-            choiceD: "True/False",
-        },
+        choices: [
+            "An integer",
+            "A user input",
+            "Text characters",
+            "True/False",
+        ],
 
-        correctAnswer: "choiceD"
+        correctAnswer: "True/False"
     },
     {
         question: "When writing an 'if' statement, what syntax is used to account for a different outcome?",
-        choices: {
-            choiceA: "Else",
-            choiceB: "Otherwise",
-            choiceC: "Instead",
-            choiceD: "Then",
-        },
+        choices: [
+            "Else",
+            "Otherwise",
+            "Instead",
+            "Then",
+        ],
 
-        correctAnswer: "choiceA"
+        correctAnswer: "Else"
     },
     {
         question: "What does this symbol represent in a JavaScript math function: % ?",
-        choices: {
-            choiceA: "Multiplication",
-            choiceB: "Remainder",
-            choiceC: "Division",
-            choiceD: "Decimal",
-        },
+        choices: [
+            "Multiplication",
+            "Remainder",
+            "Division",
+            "Decimal",
+        ],
 
-        correctAnswer: "choiceB"
+        correctAnswer: "Remainder"
     },
     {
         question: "In this array, which index number is C: [E, D, C, B, A] ?",
@@ -111,16 +112,26 @@ function displayQuestions() {
 
 //input high score with initials
 var item = document.getElementById("userInitials").value;
+var userInput = [];
 function saveInitials() {
     if (item === "") {
-        alert("Score saved")
-        localStorage.setItem(item);
-    } else {
         alert("Please enter your initials to save your score")
+    } 
+    else if (item > 2) {
+        alert("Please enter your initials (2 letters only)");
+    }
+    else {
+        alert("Score saved")
+        localStorage.setItem("userInitials", item.value);
 
     }
 }
 
 submitscoreBtn.addEventListener("click", saveInitials);
 //show high scores
-localStorage.getItem(item)
+//localStorage.getItem()
+
+//show high scores listener
+highscoreLink.addEventListener("click", function() {
+    highscoreList.setAttribute("style", "display: block");
+})
